@@ -31,16 +31,23 @@ const reviews = [
 ];
 // select items
 const img = document.querySelector("#person-img");
-img.setAttribute("src", `${reviews[0].img}`);
+// img.setAttribute("src", `${reviews[0].img}`);
 const author = document.querySelector("#author");
-author.textContent = `${reviews[0].name}`;
+// author.textContent = `${reviews[0].name}`;
 const job = document.querySelector("#job");
-job.textContent = `${reviews[0].job}`;
+// job.textContent = `${reviews[0].job}`;
 const info = document.querySelector("#info");
-info.textContent = `${reviews[0].text}`;
+// info.textContent = `${reviews[0].text}`;
 let count = 0;
+window.addEventListener("DOMContentLoaded", function () {
+  const item = reviews[count];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+});
 const biBtn = document.querySelectorAll(".button-container button");
-console.log(biBtn);
+//console.log(biBtn);
 biBtn.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     if (e.currentTarget.classList.contains("prev-btn")) {
