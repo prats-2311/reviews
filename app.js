@@ -40,12 +40,15 @@ const info = document.querySelector("#info");
 // info.textContent = `${reviews[0].text}`;
 let count = 0;
 window.addEventListener("DOMContentLoaded", function () {
+  addPerson(count);
+});
+function addPerson(current) {
   const item = reviews[count];
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
-});
+}
 const biBtn = document.querySelectorAll(".button-container button");
 //console.log(biBtn);
 biBtn.forEach(function (btn) {
@@ -63,18 +66,12 @@ biBtn.forEach(function (btn) {
         count++;
       }
     }
-    img.setAttribute("src", `${reviews[count].img}`);
-    author.textContent = `${reviews[count].name}`;
-    job.textContent = `${reviews[count].job}`;
-    info.textContent = `${reviews[count].text}`;
+    addPerson(count);
   });
 });
 const surprise = document.querySelector(".random-btn");
 
 surprise.addEventListener("click", function () {
   count = Math.floor(Math.random() * reviews.length);
-  img.setAttribute("src", `${reviews[count].img}`);
-  author.textContent = `${reviews[count].name}`;
-  job.textContent = `${reviews[count].job}`;
-  info.textContent = `${reviews[count].text}`;
+  addPerson(count);
 });
