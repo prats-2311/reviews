@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", function () {
   addPerson(count);
 });
 function addPerson(current) {
-  const item = reviews[count];
+  const item = reviews[current];
   img.src = item.img;
   author.textContent = item.name;
   job.textContent = item.job;
